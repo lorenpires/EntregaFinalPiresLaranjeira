@@ -1,0 +1,21 @@
+.divNumeroCarrito {
+    position: absolute;
+    background-color: red;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    color: white;
+    margin-left: 25px;
+    top: 28px;
+}
+.numeroCarrito {
+    font-size: 0.8rem;
+    padding-left: 4px;
+}
+.greeting {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 3rem;
+    font-family: "Courier New", Courier, monospace;
+}
