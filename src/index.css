@@ -19,3 +19,7 @@
     font-size: 3rem;
     font-family: "Courier New", Courier, monospace;
 }
+.LinkNavbar {
+    text-decoration: none;
+    color: white;
+}

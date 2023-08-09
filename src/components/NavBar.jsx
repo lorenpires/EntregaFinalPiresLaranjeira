@@ -3,29 +3,52 @@ import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import NavDropdown from "react-bootstrap/NavDropdown"
 import CartWidget from "./CartWidget"
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
     return (
         <>
             <Navbar expand="lg" bg="dark" data-bs-theme="dark">
                 <Container className="py-2">
-                    <Navbar.Brand href="#home" className="fs-2">
-                        Futar Store
-                    </Navbar.Brand>
+                    <Link className="LinkNavbar" to={"/"}>
+                        <Navbar.Brand className="fs-2">Futar Store</Navbar.Brand>
+                    </Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav" className="ms-2 mt-1 fs-5">
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">Inicio</Nav.Link>
+                            <Nav.Link>
+                                <Link className="LinkNavbar" to={"/"}>
+                                    Inicio
+                                </Link>
+                            </Nav.Link>
                             <NavDropdown title="Camisetas" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Clubes</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Clubes retro</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Selecciones</NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    <Link className="LinkNavbar" to={`/category/clubes`}>
+                                        Clubes
+                                    </Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    <Link className="LinkNavbar" to={`/category/clubesRetro`}>
+                                        Clubes retro
+                                    </Link>
+                                </NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    <Link className="LinkNavbar" to={`/category/selecciones`}>
+                                        Selecciones
+                                    </Link>
+                                </NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Conjuntos</NavDropdown.Item>
+                                <NavDropdown.Item>
+                                    <Link className="LinkNavbar" to={`/category/camperas`}>
+                                        Camperas
+                                    </Link>
+                                </NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
-                    <CartWidget />
+                    <Link className="LinkNavbar" to={"/Cart"}>
+                        <CartWidget />
+                    </Link>
                 </Container>
             </Navbar>
         </>

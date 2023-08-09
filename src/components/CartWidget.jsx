@@ -14,7 +14,7 @@ const CartWidget = () => {
                     <AiOutlineShoppingCart className="iconoCarrito" />
                 </IconContext.Provider>
                 <div className="divNumeroCarrito">
-                    <p className="numeroCarrito">4</p>
+                    <p className="numeroCarrito">0</p>
                 </div>
             </a>
             ;
