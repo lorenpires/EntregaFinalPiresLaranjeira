@@ -1,84 +1,36 @@
-import { useParams } from "react-router-dom"
-import ItemList from "./ItemList"
-import Barcelona from "./img/Camiseta Barcelona Titular 23-24.jpg"
-import RealMadrid from "./img/Camiseta Real Madrid Titular 23-24.jpg"
-import Milan from "./img/Camiseta Milan Titular 06-07.jpg"
-import Argentina from "./img/Camiseta Argentina Tres Estrellas Titular.jpg"
-import Flamengo from "./img/Campera Flamengo Negra.jpg"
+/* eslint-disable no-unused-vars */
+import { useParams } from "react-router-dom";
+import ItemList from "./ItemList";
+import { useEffect, useState } from "react";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
+
 const ItemListContainer = () => {
-    const { category } = useParams()
+    const { category } = useParams();
 
-    const productos = [
-        {
-            id: 0,
-            nombre: "Camiseta Barcelona Titular 23-24",
-            imagen: <img src={Barcelona} alt="foto" width={"300px"} />,
-            precio: 20000,
-            categoria: "clubes",
-            stock: 5,
-        },
-        {
-            id: 1,
-            nombre: "Camiseta Real Madrid Titular 23-24",
-            imagen: <img src={RealMadrid} alt="foto" width={"300px"} />,
-            categoria: "clubes",
-            precio: 20000,
-            stock: 6,
-        },
-        {
-            id: 2,
-            nombre: "Camiseta Milan Titular 06-07",
-            imagen: <img src={Milan} alt="foto" width={"300px"} />,
-            categoria: "clubesRetro",
-            precio: 20000,
-            stock: 4,
-        },
-        {
-            id: 3,
-            nombre: "Camiseta Argentina Tres Estrellas Titular",
-            imagen: <img src={Argentina} alt="foto" width={"300px"} />,
-            categoria: "selecciones",
-            precio: 20000,
-            stock: 8,
-        },
-        {
-            id: 4,
-            nombre: "Campera Flamengo Negra",
-            imagen: <img src={Flamengo} alt="foto" width={"300px"} />,
-            categoria: "camperas",
-            precio: 40000,
-            stock: 2,
-        },
-    ]
-    const getProductos = new Promise((resolve, reject) => {
-        if (productos.length > 0) {
-            setTimeout(() => {
-                resolve(productos)
-            }, 2000)
-        } else {
-            reject(new Error("No hay datos"))
-        }
-    })
+    const [productos, setProductos] = useState([]);
 
-    getProductos
-        .then((res) => {
-            console.log(res)
-        })
-        .catch((error) => {
-            console.log(error)
-        })
+    useEffect(() => {
+        const db = getFirestore();
+        const itemsCollection = collection(db, "productos");
 
-    const categoriaFiltrada = productos.filter((producto) => producto.categoria === category)
+        getDocs(itemsCollection).then((snapshot) => {
+            const docs = snapshot.docs.map((doc) => ({ ...doc.data() }));
+            setProductos(docs);
+        });
+    }, []);
+
+    const categoriaFiltrada = productos.filter((producto) => producto.categoria === category);
 
     return (
-        <>
+        <div className="mb-5">
+            <h1 className="allProducts text-center mt-3 py-3">Nuestra camisetas</h1>
             {category ? (
                 <ItemList productos={categoriaFiltrada} />
             ) : (
                 <ItemList productos={productos} />
             )}
-        </>
-    )
-}
+        </div>
+    );
+};
 
-export default ItemListContainer
+export default ItemListContainer;

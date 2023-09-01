@@ -1,5 +1,5 @@
-import { Col, Container, Row } from "react-bootstrap"
-import Item from "./Item"
+import { Col, Container, Row } from "react-bootstrap";
+import Item from "./Item";
 
 const ItemList = ({ productos }) => {
     return (
@@ -8,7 +8,7 @@ const ItemList = ({ productos }) => {
                 <Row className="">
                     {productos.map((producto) => {
                         return (
-                            <Col key={producto.id}>
+                            <Col key={producto.nombre}>
                                 <Item
                                     id={producto.id}
                                     nombre={producto.nombre}
@@ -18,11 +18,11 @@ const ItemList = ({ productos }) => {
                                     stock={producto.stock}
                                 />
                             </Col>
-                        )
+                        );
                     })}
                 </Row>
             </Container>
         </>
-    )
-}
-export default ItemList
+    );
+};
+export default ItemList;

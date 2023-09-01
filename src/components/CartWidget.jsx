@@ -1,7 +1,10 @@
-import { AiOutlineShoppingCart } from "react-icons/ai"
-import { IconContext } from "react-icons"
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { IconContext } from "react-icons";
+import { useContext } from "react";
+import { CartContext } from "../context/ShoppingCartContext";
 
 const CartWidget = () => {
+    const { cart } = useContext(CartContext);
     return (
         <>
             <a href="">
@@ -14,12 +17,12 @@ const CartWidget = () => {
                     <AiOutlineShoppingCart className="iconoCarrito" />
                 </IconContext.Provider>
                 <div className="divNumeroCarrito">
-                    <p className="numeroCarrito">0</p>
+                    <p className="numeroCarrito">{cart.length}</p>
                 </div>
             </a>
             ;
         </>
-    )
-}
+    );
+};
 
-export default CartWidget
+export default CartWidget;

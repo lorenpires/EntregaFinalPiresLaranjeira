@@ -1,9 +1,9 @@
-import Container from "react-bootstrap/Container"
-import Nav from "react-bootstrap/Nav"
-import Navbar from "react-bootstrap/Navbar"
-import NavDropdown from "react-bootstrap/NavDropdown"
-import CartWidget from "./CartWidget"
-import { Link } from "react-router-dom"
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -37,12 +37,6 @@ const NavBar = () => {
                                         Selecciones
                                     </Link>
                                 </NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item>
-                                    <Link className="LinkNavbar" to={`/category/camperas`}>
-                                        Camperas
-                                    </Link>
-                                </NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
@@ -52,6 +46,6 @@ const NavBar = () => {
                 </Container>
             </Navbar>
         </>
-    )
-}
-export default NavBar
+    );
+};
+export default NavBar;

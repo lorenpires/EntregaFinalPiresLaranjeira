@@ -1,6 +1,14 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+.allProducts {
+    min-width: 100%;
+    background-color: rgb(167, 167, 167);
+}
 .divNumeroCarrito {
     position: absolute;
-    background-color: red;
+    background-color: rgb(34, 50, 190);
     width: 17px;
     height: 17px;
     border-radius: 50%;
@@ -11,15 +19,94 @@
 .numeroCarrito {
     font-size: 0.8rem;
     padding-left: 4px;
-}
-.greeting {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    font-size: 3rem;
-    font-family: "Courier New", Courier, monospace;
+    margin-bottom: 1px;
 }
 .LinkNavbar {
     text-decoration: none;
     color: white;
+}
+.card {
+    width: 300px;
+    max-height: 420px;
+    min-height: 420px;
+}
+.cardCart {
+    width: 300px;
+    max-height: 600px;
+    min-height: 420px;
+}
+.imagenDetail {
+    width: 750px;
+}
+.imagenCart {
+    width: 290px;
+}
+.recibirOrden {
+    margin-left: 45%;
+}
+
+.loader {
+    --dim: 3rem;
+    width: var(--dim);
+    height: var(--dim);
+    position: relative;
+    animation: spin988 2s linear infinite;
+    margin-top: 250px;
+    margin-left: 50%;
+}
+
+.loader .circle {
+    --color: #333;
+    --dim: 1.2rem;
+    width: var(--dim);
+    height: var(--dim);
+    background-color: var(--color);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.loader .circle:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+
+.loader .circle:nth-child(2) {
+    top: 0;
+    right: 0;
+}
+
+.loader .circle:nth-child(3) {
+    bottom: 0;
+    left: 0;
+}
+
+.loader .circle:nth-child(4) {
+    bottom: 0;
+    right: 0;
+}
+
+@keyframes spin988 {
+    0% {
+        transform: scale(1) rotate(0);
+    }
+
+    20%,
+    25% {
+        transform: scale(1.3) rotate(90deg);
+    }
+
+    45%,
+    50% {
+        transform: scale(1) rotate(180deg);
+    }
+
+    70%,
+    75% {
+        transform: scale(1.3) rotate(270deg);
+    }
+
+    95%,
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
 }
