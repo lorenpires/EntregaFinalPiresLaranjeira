@@ -20,7 +20,6 @@ const CartWidget = () => {
                     <p className="numeroCarrito">{cart.length}</p>
                 </div>
             </a>
-            ;
         </>
     );
 };

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import { useEffect, useState } from "react";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
+import Portada from "./img/bannerFinal.jpg";
 
 const ItemListContainer = () => {
     const { category } = useParams();
@@ -23,7 +24,9 @@ const ItemListContainer = () => {
 
     return (
         <div className="mb-5">
-            <h1 className="allProducts text-center mt-3 py-3">Nuestra camisetas</h1>
+            <div className="mt-3 py-3 banner" style={{ backgroundImage: `url(${Portada})` }}>
+                <h1 className="allProducts text-center mx-auto px-3 pb-1">Nuestras camisetas</h1>
+            </div>
             {category ? (
                 <ItemList productos={categoriaFiltrada} />
             ) : (

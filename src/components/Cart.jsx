@@ -1,11 +1,12 @@
+/* eslint-disable no-unused-vars */
 import { useContext } from "react";
 import { CartContext } from "../context/ShoppingCartContext";
-import Card from "react-bootstrap/Card";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-    const { cart, setCart, totalPrecio, setTotalPrecio } = useContext(CartContext);
+    const { cart, setCart, totalPrecio, setTotalPrecio, nombresCart, setNombresCart } =
+        useContext(CartContext);
 
     let paso = 0;
     let total = 0;
@@ -27,26 +28,37 @@ const Cart = () => {
                             totalPrecio == 0
                                 ? (setTotalPrecio(paso), (total = paso))
                                 : ((total = total + paso), setTotalPrecio(total));
-
+                            /* 
+                            nombresCart
+                            /*  ? clg("AAAAAAAAAAAAAAAAAAAA")
+                            : setNombresCart(c.nombre);
+                            */
                             return (
-                                <Col key={c.id}>
-                                    <Card className="pt-2 mb-3 cardCart">
-                                        <div>
-                                            <img src={`${c.imagen}`} className="imagenCart"></img>
+                                <Col key={c.id} className="d-flex justify-content-center mb-3">
+                                    <div className=" mb-3 cardCart rounded-top-4">
+                                        <img
+                                            className="rounded-top-4 imagenCard"
+                                            src={`${c.imagen}`}></img>
+                                        <div className="bordeCart rounded-bottom-4 pb-2">
+                                            <div className="pt-2 ps-2 pb-0 ">
+                                                <div className="text-center">{c.nombre}</div>
+                                                <div>
+                                                    Precio:{" "}
+                                                    <span className="precioCard">${c.precio}</span>
+                                                </div>
+                                                <div>Cantidad: {c.cantidad}</div>
+                                            </div>
+                                            <div className="pt-0 pe-3 me-3 text-end d-flex justify-content-end ">
+                                                <div className="align-self-end ">
+                                                    <Button
+                                                        className="boton"
+                                                        onClick={() => deleteProduct(c.id)}>
+                                                        Eliminar del carrito
+                                                    </Button>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <Card.Body className="pt-2 pb-0">
-                                            <Card.Title className="fs-5">{c.nombre}</Card.Title>
-                                            <Card.Text>Precio: ${c.precio}</Card.Text>
-                                            <Card.Text>Cantidad: {c.cantidad}</Card.Text>
-                                        </Card.Body>
-                                        <Card.Body className="text-end d-flex justify-content-end">
-                                            <Button
-                                                variant="dark"
-                                                onClick={() => deleteProduct(c.id)}>
-                                                Eliminar del carrito
-                                            </Button>
-                                        </Card.Body>
-                                    </Card>
+                                    </div>
                                 </Col>
                             );
                         })
@@ -55,16 +67,19 @@ const Cart = () => {
                             <Row>
                                 <h2 className="mb-3">No hay productos en el Carrito</h2>
                                 <Link to={"/"}>
-                                    <Button variant="dark">Volver al inicio</Button>
+                                    <Button className="boton">Volver al inicio</Button>
                                 </Link>
                             </Row>
                         </>
                     )}
                     {cart.length > 0 ? (
-                        <Container className="mt-5 mb-5 text-center">
+                        <Container className="mt-2 mb-5 text-center">
                             <Row className="">
                                 <Col>
-                                    <Button variant="dark" onClick={deleteCart}>
+                                    <Link to={`/`}>
+                                        <Button className="boton me-3">Seguir comprando</Button>
+                                    </Link>
+                                    <Button className="boton" onClick={deleteCart}>
                                         Borrar Carrito
                                     </Button>
                                 </Col>
@@ -73,7 +88,7 @@ const Cart = () => {
                                 </Col>
                                 <Col>
                                     <Link to={"/checkout"}>
-                                        <Button variant="dark">Checkout</Button>
+                                        <Button className="boton">Checkout</Button>
                                     </Link>
                                 </Col>
                             </Row>

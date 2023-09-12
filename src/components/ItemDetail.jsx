@@ -20,7 +20,7 @@ const ItemDetail = ({ productos }) => {
                                     <div className="tituloItem fs-1 pb-2">{producto.nombre}</div>
                                     <div className="itemPrecio fs-2 pb-2">${producto.precio}</div>
                                     <div className="itemStock fs-2 pb-2">
-                                        Stock: {producto.stock}
+                                        Disponible: {producto.stock}
                                     </div>
                                     <ItemCount
                                         id={producto.id}
@@ -28,6 +28,7 @@ const ItemDetail = ({ productos }) => {
                                         precio={producto.precio}
                                         stock={producto.stock}
                                         imagen={producto.imagen}
+                                        categoria={producto.categoria}
                                     />
                                 </Col>
                             </Row>

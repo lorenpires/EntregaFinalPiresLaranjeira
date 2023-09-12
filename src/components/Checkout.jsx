@@ -106,7 +106,7 @@ const Checkout = () => {
                     <Toast.Header>La verificacion fue completada </Toast.Header>
                     <Toast.Body>Desea continuar?</Toast.Body>
                     <Link to={"/sendorder"} className="d-flex justify-content-center">
-                        <Button>Confirmar</Button>
+                        <Button className="botonConfirmar">Confirmar</Button>
                     </Link>
                 </Toast>
             </Container>

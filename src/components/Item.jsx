@@ -1,28 +1,32 @@
-import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
 const Item = ({ id, nombre, precio, imagen }) => {
     return (
         <>
-            <Card className="pt-2 mb-3 ">
-                <img src={`${imagen}`}></img>
-                <Card.Body className="pt-2 pb-0">
-                    <Card.Title>{nombre}</Card.Title>
-                    <Card.Text>Precio: ${precio}</Card.Text>
-                </Card.Body>
-                <Card.Body className="pt-0 me-3 text-end d-flex justify-content-end">
-                    <Card.Link className="align-self-end">
-                        <Link
-                            to={`/item/${id}`}
-                            style={{
-                                fontWeight: "bold",
-                            }}
-                            className="text-dark ">
-                            Detalles
-                        </Link>
-                    </Card.Link>
-                </Card.Body>
-            </Card>
+            <div className=" mb-3 Card rounded-top-4">
+                <img className="rounded-top-4 imagenCard" src={`${imagen}`}></img>
+                <div className="bordeCard rounded-bottom-4 pb-2">
+                    <div className="pt-2 ps-2 pb-0 ">
+                        <div>{nombre}</div>
+                        <div>
+                            Precio: <span className="precioCard">${precio}</span>
+                        </div>
+                    </div>
+                    <div className="pt-0 pe-3 me-3 text-end d-flex justify-content-end ">
+                        <div className="align-self-end ">
+                            <Link
+                                to={`/item/${id}`}
+                                style={{
+                                    fontWeight: "bold",
+                                    textDecoration: "none",
+                                }}
+                                className="text-dark detalles">
+                                Detalles
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 };

@@ -8,7 +8,7 @@ const ItemList = ({ productos }) => {
                 <Row className="">
                     {productos.map((producto) => {
                         return (
-                            <Col key={producto.nombre}>
+                            <Col key={producto.nombre} className="d-flex justify-content-center">
                                 <Item
                                     id={producto.id}
                                     nombre={producto.nombre}
