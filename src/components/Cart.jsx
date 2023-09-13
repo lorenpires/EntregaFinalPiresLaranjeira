@@ -8,8 +8,8 @@ const Cart = () => {
     const { cart, setCart, totalPrecio, setTotalPrecio, nombresCart, setNombresCart } =
         useContext(CartContext);
 
-    let paso = 0;
-    let total = 0;
+    /* let paso = 0;
+    let total = 0; */
 
     const deleteProduct = (idOut) => {
         const cartNueva = cart.filter((c) => c.id !== idOut);
@@ -21,18 +21,16 @@ const Cart = () => {
     return (
         <div>
             <Container className="mt-5">
+                <h1 style={{ fontWeight: "bold" }} className="mb-3">
+                    Tu carrito
+                </h1>
                 <Row className="">
                     {cart.length > 0 ? (
                         cart.map((c) => {
-                            paso = c.precio * c.cantidad;
+                            /* paso = c.precio * c.cantidad;
                             totalPrecio == 0
                                 ? (setTotalPrecio(paso), (total = paso))
-                                : ((total = total + paso), setTotalPrecio(total));
-                            /* 
-                            nombresCart
-                            /*  ? clg("AAAAAAAAAAAAAAAAAAAA")
-                            : setNombresCart(c.nombre);
-                            */
+                                : ((total = total + paso), setTotalPrecio(total)); */
                             return (
                                 <Col key={c.id} className="d-flex justify-content-center mb-3">
                                     <div className=" mb-3 cardCart rounded-top-4">

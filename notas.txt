@@ -1,0 +1,13 @@
+
+Para Hacer:
+-Agregar Talles
+-Metodos de pago
+-Registro de usuario
+-Cupon de descuento primera compra
+-Stock variable
+-Resumen de la compra mientras hago checkout
+
+
+Hecho:
+-Carrito desplegable
+-Subir a database con cantidad por camiseta

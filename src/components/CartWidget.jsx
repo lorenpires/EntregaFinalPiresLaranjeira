@@ -7,19 +7,17 @@ const CartWidget = () => {
     const { cart } = useContext(CartContext);
     return (
         <>
-            <a href="">
-                <IconContext.Provider
-                    value={{
-                        color: "white",
-                        size: "2em",
-                        className: "global-class-name",
-                    }}>
-                    <AiOutlineShoppingCart className="iconoCarrito" />
-                </IconContext.Provider>
-                <div className="divNumeroCarrito">
-                    <p className="numeroCarrito">{cart.length}</p>
-                </div>
-            </a>
+            <IconContext.Provider
+                value={{
+                    color: "white",
+                    size: "2em",
+                    className: "global-class-name",
+                }}>
+                <AiOutlineShoppingCart className="iconoCarrito" />
+            </IconContext.Provider>
+            <div className="divNumeroCarrito">
+                <p className="numeroCarrito">{cart.length}</p>
+            </div>
         </>
     );
 };

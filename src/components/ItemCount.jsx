@@ -39,12 +39,11 @@ const ItemCount = ({ id, nombre, precio, stock, imagen, categoria }) => {
             }
         });
         toast.success("Añadido al carrito", {
-            position: "top-right",
-            autoClose: 5000,
+            position: "bottom-right",
+            autoClose: 3000,
             hideProgressBar: false,
-
-            closeOnClick: false,
-            pauseOnHover: true,
+            closeOnClick: true,
+            pauseOnHover: false,
             draggable: false,
             progress: undefined,
             theme: "colored",
@@ -55,8 +54,8 @@ const ItemCount = ({ id, nombre, precio, stock, imagen, categoria }) => {
         nombresCart.length > 0
             ? yaExiste
                 ? console.log("ya existe")
-                : setNombresCart([...nombresCart, nombre])
-            : setNombresCart([nombre]);
+                : setNombresCart([...nombresCart, { Nombre: nombre, cantidad: count }])
+            : setNombresCart([{ Nombre: nombre, cantidad: count }]);
         setCambio(false);
     };
 
