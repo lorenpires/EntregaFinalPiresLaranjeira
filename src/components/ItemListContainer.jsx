@@ -4,6 +4,7 @@ import ItemList from "./ItemList";
 import { useEffect, useState } from "react";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import Portada from "./img/bannerFinal.jpg";
+import { Button } from "react-bootstrap";
 
 const ItemListContainer = () => {
     const { category } = useParams();

@@ -1,25 +1,37 @@
 import { Col, Container, Row } from "react-bootstrap";
 import ItemCount from "./ItemCount";
 import { useParams } from "react-router-dom";
+import fondo from "./img/fondoEstadio.jpg";
 
 const ItemDetail = ({ productos }) => {
     const { id } = useParams();
     const producto = productos.filter((p) => p.id == id);
     return (
-        <>
+        <div
+            style={{
+                backgroundImage: `url(${fondo})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+            }}>
             {producto ? (
                 producto.map((producto) => {
                     return (
                         <Container key={producto.id}>
-                            <Row className="mt-5">
+                            <Row className="py-5 ">
                                 <Col>
-                                    <img src={`${producto.imagen}`} className="imagenDetail"></img>
+                                    <img
+                                        src={`${producto.imagen}`}
+                                        className="imagenDetail sombra"></img>
                                 </Col>
 
                                 <Col>
-                                    <div className="tituloItem fs-1 pb-2">{producto.nombre}</div>
-                                    <div className="itemPrecio fs-2 pb-2">${producto.precio}</div>
-                                    <div className="itemStock fs-2 pb-2">
+                                    <div className="tituloItem pb-2 sombraTexto text-center">
+                                        {producto.nombre}
+                                    </div>
+                                    <div className="datosItem pb-2 sombraTexto">
+                                        ${producto.precio}
+                                    </div>
+                                    <div className="datosItem pb-2 sombraTexto mb-5">
                                         Disponible: {producto.stock}
                                     </div>
                                     <ItemCount
@@ -38,7 +50,7 @@ const ItemDetail = ({ productos }) => {
             ) : (
                 <div>Este producto no esta disponible</div>
             )}
-        </>
+        </div>
     );
 };
 

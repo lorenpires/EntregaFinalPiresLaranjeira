@@ -5,9 +5,9 @@ Para Hacer:
 -Registro de usuario
 -Cupon de descuento primera compra
 -Stock variable
--Resumen de la compra mientras hago checkout
 
 
 Hecho:
+-Resumen de la compra mientras hago checkout
 -Carrito desplegable
 -Subir a database con cantidad por camiseta

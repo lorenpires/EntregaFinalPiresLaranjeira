@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Item = ({ id, nombre, precio, imagen }) => {
     return (
         <>
-            <div className=" mb-3 Card rounded-top-4">
+            <div className=" mb-3 Card rounded-top-4 hvr-grow-shadow">
                 <img className="rounded-top-4 imagenCard" src={`${imagen}`}></img>
                 <div className="bordeCard rounded-bottom-4 pb-2">
                     <div className="pt-2 ps-2 pb-0 ">
@@ -21,7 +21,7 @@ const Item = ({ id, nombre, precio, imagen }) => {
                                     textDecoration: "none",
                                 }}
                                 className="text-dark detalles">
-                                Detalles
+                                Ver producto
                             </Link>
                         </div>
                     </div>

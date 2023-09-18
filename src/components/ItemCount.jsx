@@ -1,16 +1,29 @@
 /* eslint-disable no-unused-vars */
 import { Button, ButtonGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { CartContext } from "../context/ShoppingCartContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { doc, onSnapshot } from "firebase/firestore";
 
 const ItemCount = ({ id, nombre, precio, stock, imagen, categoria }) => {
     const [count, setCount] = useState(1);
     const [cambio, setCambio] = useState(true);
 
     const { cart, setCart, nombresCart, setNombresCart } = useContext(CartContext);
+
+    const borrarStock = () => {
+        const db = getFirestore();
+        const unsub = onSnapshot(doc(db, "productos", "2Je0ykY9tSvPqBUnYws1"), (doc) => {
+            console.log(doc.data());
+            doc.data([{ stock: 3 }]);
+            console.log(doc.data());
+        });
+        unsub;
+    };
+
     const increment = () => {
         if (count < stock) {
             setCount(count + 1);
@@ -63,18 +76,27 @@ const ItemCount = ({ id, nombre, precio, stock, imagen, categoria }) => {
         <>
             {cambio == true ? (
                 <div className="d-flex flex-column">
-                    <ButtonGroup size="lg" className="mb-2 botonGroup">
-                        <Button onClick={decrement} className="boton">
+                    <ButtonGroup size="lg" className="mt-5 mb-4 botonGroup ">
+                        <Button
+                            onClick={decrement}
+                            className="boton"
+                            style={{ borderRadius: "0px" }}>
                             -
                         </Button>
                         <Button className="boton">{count}</Button>
-                        <Button onClick={increment} className="boton">
+                        <Button
+                            onClick={increment}
+                            className="boton"
+                            style={{ borderRadius: "0px" }}>
                             +
                         </Button>
                     </ButtonGroup>
-                    <Button className="boton" onClick={() => addToCart()}>
+                    <Button className="boton sombraCount" onClick={() => addToCart()}>
                         Añadir al carrito
                     </Button>
+                    {/* 
+                    <Button onClick={() => borrarStock()}>Borrar Stock camiseta</Button>
+                     */}
                 </div>
             ) : (
                 <div className="">

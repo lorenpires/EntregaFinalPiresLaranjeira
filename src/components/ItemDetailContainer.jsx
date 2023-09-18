@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
         });
     }, []);
     return (
-        <div className="mb-5 itemDetail">
+        <div className="itemDetail">
             <ItemDetail productos={camisetas} />
         </div>
     );
