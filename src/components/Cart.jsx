@@ -21,7 +21,7 @@ const Cart = () => {
     return (
         <div>
             <Container className="mt-5">
-                <h1 style={{ fontWeight: "bold" }} className="mb-3">
+                <h1 style={{ fontWeight: "bold" }} className="mb-4">
                     Tu carrito
                 </h1>
                 <Row className="">

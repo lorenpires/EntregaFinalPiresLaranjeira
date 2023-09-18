@@ -106,14 +106,14 @@ const ItemCount = ({ id, nombre, precio, stock, imagen, categoria }) => {
                             <Button className="boton">{count}</Button>
                             <Button className="boton">+</Button>
                         </ButtonGroup>
-                        <Button className="boton">Añadir al carrito</Button>
+                        <Button className="boton sombraCount">Añadir al carrito</Button>
                     </div>
                     <div className="d-flex flex-row postAñadir">
                         <Link to={`/`}>
-                            <Button className="boton me-3">Seguir comprando</Button>
+                            <Button className="boton me-3 sombraCount">Seguir comprando</Button>
                         </Link>
                         <Link to={"/cart"}>
-                            <Button className="boton">Ver Carrito</Button>
+                            <Button className="boton sombraCount">Ver Carrito</Button>
                         </Link>
                     </div>
                 </div>
