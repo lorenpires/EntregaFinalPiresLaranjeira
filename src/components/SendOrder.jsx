@@ -37,14 +37,18 @@ const SendOrder = () => {
                     </Row>
                 </Container>
             ) : (
-                <Button variant="dark" className="mt-5 fs-3 recibirOrden" onClick={handleSubmit}>
-                    Recibir orden
-                </Button>
+                <div className="text-center">
+                    <Button variant="dark" className="mt-5 fs-3" onClick={handleSubmit}>
+                        Recibir orden
+                    </Button>
+                </div>
             )}
             <Row className="mx-5 mb-5">
                 {cart.map((c) => {
                     return (
-                        <Col key={c.id} className="col-2 d-flex justify-content-center mt-5 mb-3">
+                        <Col
+                            key={c.id}
+                            className="col-11 col-lg-2 d-flex justify-content-center mt-5 mb-3">
                             <div className=" mb-3 cardCard rounded-top-4">
                                 <img className="rounded-top-4 imagenCard" src={`${c.imagen}`}></img>
                                 <div className="bordeCard rounded-bottom-4 pb-2">

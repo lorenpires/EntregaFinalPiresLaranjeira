@@ -25,7 +25,9 @@ const ItemListContainer = () => {
 
     return (
         <div className="mb-5">
-            <div className="mt-3 py-3 banner" style={{ backgroundImage: `url(${Portada})` }}>
+            <div
+                className="mt-3 py-3 banner"
+                style={{ backgroundImage: `url(${Portada})`, backgroundRepeat: "no-repeat" }}>
                 <h1 className="allProducts text-center mx-auto px-3 pb-1">Nuestras camisetas</h1>
             </div>
             {category ? (

@@ -28,14 +28,14 @@ const NavBar = () => {
     return (
         <>
             <Navbar className="sticky-top" expand="lg" bg="dark" data-bs-theme="dark">
-                <Container className="py-2">
+                <Container className="py-lg-2">
                     <Link className="LinkNavbar" to={"/"}>
                         <Navbar.Brand className="fs-1 Titulo">
                             <img src={logo} alt="logo" className="logo me-3" />
                             Futar Store
                         </Navbar.Brand>
                     </Link>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" className="mt-2" />
                     <Navbar.Collapse id="basic-navbar-nav" className="ms-2 mt-1 ">
                         <Nav className="me-auto  ">
                             <NavDropdown
@@ -58,6 +58,13 @@ const NavBar = () => {
                                     </Link>
                                 </NavDropdown.Item>
                             </NavDropdown>
+                            <div className="d-lg-none">
+                                <Link to={"/cart"} style={{ textDecoration: "none" }}>
+                                    <div className="fs-4 text-secondary-emphasis ms-3">
+                                        Ver carrito
+                                    </div>
+                                </Link>
+                            </div>
                         </Nav>
                     </Navbar.Collapse>
 

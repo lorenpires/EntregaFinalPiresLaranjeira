@@ -76,7 +76,7 @@ const ItemCount = ({ id, nombre, precio, stock, imagen, categoria }) => {
         <>
             {cambio == true ? (
                 <div className="d-flex flex-column">
-                    <ButtonGroup size="lg" className="mt-5 mb-4 botonGroup ">
+                    <ButtonGroup size="lg" className="mt-3 mt-lg-5 mb-4 botonGroup ">
                         <Button
                             onClick={decrement}
                             className="boton"
@@ -100,7 +100,7 @@ const ItemCount = ({ id, nombre, precio, stock, imagen, categoria }) => {
                 </div>
             ) : (
                 <div className="">
-                    <div className="d-flex flex-column mb-3" style={{ opacity: "0.5" }}>
+                    <div className="d-flex flex-column mb-3 mt-3" style={{ opacity: "0.5" }}>
                         <ButtonGroup size="lg" className="mb-2 botonGroup">
                             <Button className="boton">-</Button>
                             <Button className="boton">{count}</Button>

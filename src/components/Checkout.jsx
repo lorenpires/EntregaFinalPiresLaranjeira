@@ -21,10 +21,10 @@ const Checkout = () => {
         <>
             <Container className="px-auto">
                 <Row>
-                    <Col className="col-7">
+                    <Col className="col-12 col-lg-7">
                         <form onSubmit={handleSubmit}>
                             <Row /* style={{ minWidth: "100%" }} */>
-                                <Col className="col  mt-3">
+                                <Col className="col-12 col-lg mt-3">
                                     <Form.Floating className="mb-3">
                                         <Form.Control
                                             required
@@ -36,7 +36,7 @@ const Checkout = () => {
                                         <label htmlFor="floatingInputCustom">Nombre</label>
                                     </Form.Floating>
                                 </Col>
-                                <Col className="col  mt-3">
+                                <Col className="col-12 col-lg mt-3">
                                     <Form.Floating className="mb-3">
                                         <Form.Control
                                             required
@@ -50,7 +50,7 @@ const Checkout = () => {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col className="col  mt-3">
+                                <Col className="col-12 col-lg mt-3">
                                     <Form.Floating className="mb-3">
                                         <Form.Control
                                             required
@@ -67,7 +67,7 @@ const Checkout = () => {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col className="col  mt-3">
+                                <Col className="col-12 col-lg mt-3">
                                     <Form.Floating className="mb-3">
                                         <Form.Control
                                             required
@@ -81,7 +81,7 @@ const Checkout = () => {
                                         </label>
                                     </Form.Floating>
                                 </Col>
-                                <Col className="col  mt-3">
+                                <Col className="col-12 col-lg mt-3">
                                     <Form.Floating className="mb-3">
                                         <Form.Control
                                             required
@@ -105,14 +105,14 @@ const Checkout = () => {
                             show={show}
                             delay={3000}
                             autohide
-                            className="p-2 fs-5 mt-1 mx-auto">
+                            className="p-2 fs-5 mt-3 mt-lg-1 mx-auto">
                             <Toast.Body>El Correo Electrónico no coincide</Toast.Body>
                         </Toast>
                         <Toast
                             onClose={() => setEnviar(false)}
                             show={enviar}
                             delay={3000}
-                            className="p-2 fs-5 mt-1 mx-auto text-center">
+                            className="p-2 fs-5 mt-3 mt-lg-1 mx-auto text-center">
                             <Toast.Header>La verificacion fue completada </Toast.Header>
                             <Toast.Body>Desea continuar?</Toast.Body>
                             <Link to={"/sendorder"} className="d-flex justify-content-center">
@@ -124,7 +124,9 @@ const Checkout = () => {
                             </Link>
                         </Toast>
                     </Col>
-                    <Col className="col-5" style={{ maxHeight: "550px", overflowY: "scroll" }}>
+                    <Col
+                        className="col-12 col-lg-5 mt-3 mt-lg-0"
+                        style={{ maxHeight: "550px", overflowY: "scroll" }}>
                         {cart.map((p) => {
                             return (
                                 <div key={p.id} className="pt-2 ps-2 pb-0 ">

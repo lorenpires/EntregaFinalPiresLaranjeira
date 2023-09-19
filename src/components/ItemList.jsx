@@ -4,11 +4,13 @@ import Item from "./Item";
 const ItemList = ({ productos }) => {
     return (
         <>
-            <Container className="mt-5">
-                <Row className="">
+            <Container className="mt-3 mt-lg-5">
+                <Row className="d-flex justify-content-center justify-content-lg-start">
                     {productos.map((producto) => {
                         return (
-                            <Col key={producto.nombre} className="d-flex justify-content-center">
+                            <Col
+                                key={producto.nombre}
+                                className="d-flex justify-content-center col-lg-3 col-10">
                                 <Item
                                     id={producto.id}
                                     nombre={producto.nombre}

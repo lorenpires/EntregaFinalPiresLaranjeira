@@ -17,8 +17,8 @@ const ItemDetail = ({ productos }) => {
                 producto.map((producto) => {
                     return (
                         <Container key={producto.id}>
-                            <Row className="py-5 ">
-                                <Col>
+                            <Row className="py-lg-5 py-3 ">
+                                <Col className="col-12 text-center pe-lg-5 col-lg">
                                     <img
                                         src={`${producto.imagen}`}
                                         className="imagenDetail sombra"></img>
@@ -31,7 +31,7 @@ const ItemDetail = ({ productos }) => {
                                     <div className="datosItem pb-2 sombraTexto">
                                         ${producto.precio}
                                     </div>
-                                    <div className="datosItem pb-2 sombraTexto mb-5">
+                                    <div className="datosItem pb-lg-2 sombraTexto mb-lg-5">
                                         Disponible: {producto.stock}
                                     </div>
                                     <ItemCount

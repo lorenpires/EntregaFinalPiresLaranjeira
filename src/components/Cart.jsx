@@ -8,9 +8,6 @@ const Cart = () => {
     const { cart, setCart, totalPrecio, setTotalPrecio, nombresCart, setNombresCart } =
         useContext(CartContext);
 
-    /* let paso = 0;
-    let total = 0; */
-
     const deleteProduct = (idOut) => {
         const cartNueva = cart.filter((c) => c.id !== idOut);
         setCart(cartNueva);
@@ -20,7 +17,7 @@ const Cart = () => {
     };
     return (
         <div>
-            <Container className="mt-5">
+            <Container className="mt-3 mt-lg-5">
                 <h1 style={{ fontWeight: "bold" }} className="mb-4">
                     Tu carrito
                 </h1>
@@ -32,7 +29,9 @@ const Cart = () => {
                                 ? (setTotalPrecio(paso), (total = paso))
                                 : ((total = total + paso), setTotalPrecio(total)); */
                             return (
-                                <Col key={c.id} className="d-flex justify-content-center mb-3">
+                                <Col
+                                    key={c.id}
+                                    className="d-flex justify-content-center mb-3 col-10 col-lg mx-auto">
                                     <div className=" mb-3 cardCart rounded-top-4">
                                         <img
                                             className="rounded-top-4 imagenCard"
@@ -73,7 +72,7 @@ const Cart = () => {
                     {cart.length > 0 ? (
                         <Container className="mt-2 mb-5 text-center">
                             <Row className="">
-                                <Col>
+                                <Col className="col-12 col-lg">
                                     <Link to={`/`}>
                                         <Button className="boton me-3">Seguir comprando</Button>
                                     </Link>
@@ -81,10 +80,10 @@ const Cart = () => {
                                         Borrar Carrito
                                     </Button>
                                 </Col>
-                                <Col>
+                                <Col className="col-12 col-lg mt-4 mb-3 mb-lg-0 mt-lg-0">
                                     <h3>Precio total: ${totalPrecio}</h3>
                                 </Col>
-                                <Col>
+                                <Col className="col-12 col-lg">
                                     <Link to={"/checkout"}>
                                         <Button className="boton">Checkout</Button>
                                     </Link>

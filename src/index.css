@@ -29,6 +29,14 @@ button {
 .logo {
     max-width: 80px;
 }
+@media (max-width: 992px) {
+    .logo {
+        max-width: 60px;
+    }
+    .menuCarrito {
+        display: none;
+    }
+}
 .Titulo {
     font-family: "Bungee Outline", cursive;
 }
@@ -160,7 +168,23 @@ button {
     border-radius: 9px !important;
     box-shadow: -1px 0px 9px 6px rgba(0, 0, 0, 0.75);
 }
-
+@media (max-width: 992px) {
+    .imagenDetail {
+        max-width: 90%;
+    }
+    .tituloItem {
+        font-size: 1.7rem;
+    }
+    .datosItem {
+        font-size: 1.4rem;
+    }
+    .botonGroup {
+        max-height: 44px;
+    }
+    .Toastify {
+        display: none;
+    }
+}
 /* 
         CART
 */
@@ -194,9 +218,7 @@ button {
 /* 
         SEND ORDER    
 */
-.recibirOrden {
-    margin-left: 45%;
-}
+
 /* 
         LOADER
 */
